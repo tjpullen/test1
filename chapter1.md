@@ -7,15 +7,17 @@ attachments :
 --- type:NormalExercise lang:r xp:100 skills:1 key:509c602d6a
 ## One sample t test
 
-The **one sample t test** compares the mean of one sample to a fixed value.
+The **one sample t test** compares the mean of one sample to a particular value.
 
 **Eample: Are our students taller than average?**
 
-The WHO 2007 reference height for 19 year-old females has a mean of 163.1548 cm. The height of a sample of 20 female students in this age group was measured and placed in the vector `heights`. You could use a one sample t test to compare the sample mean for this cohort to the population mean given by the WHO.
+The mean height of 19 year-old females in the WHO reference data is 163.1548 cm. You could use a one sample t test to compare a sample of this year's students to this mean value.
 
 *** =instructions
 
-Perform a one sample t test to compare the mean of `heights` to the populatio mean (mu) of 163.15.
+The height of a sample of 20 female students in this age group was measured and placed in the vector `heights`.
+
+Perform a one sample t test to compare the mean of `heights` to the populatio mean (`mu =`) of 163.15.
 
 You need to use the `t.test()` function, and you need to give it the list of all the heights in the sample rather than just the sample mean.
 
@@ -55,7 +57,7 @@ Perform the t test again to compare `heights` to a population mean of 163.15.
 
 Look at the output.
 
-With a critical value of $\alpha = 0.05$ do you reject the null hypothesis?
+With a threshold of $\alpha = 0.05$ do you reject the null hypothesis?
 
 *** =instructions
 - yes
@@ -114,13 +116,35 @@ test_function("boxplot", args = c("formula", "data"))
 
 
 
---- type:NormalExercise lang:r xp:100 skills:1 key:1bb567adc1
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:7706d7aba9
 ## Two sample t test (2)
 
-Now you've had a look at the data, perform a two sample t test.
+Take a look at the boxplot.
+
+Does it look like the drug-treated mice have lost weight compared to the control mice?
+*** =instructions
+- Yes
+- No
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_1.RData"))
+boxplot(weight ~ treatment, data = data1)
+```
+
+*** =sct
+```{r}
+test_mc(correct = 1)
+```
+--- type:NormalExercise lang:r xp:100 skills:1 key:1bb567adc1
+## Two sample t test (3)
+
+Now you've had a look at the data, you could do a formal hypothesis test.
 
 *** =instructions
-Perform a two sample t test to compare the mean weights grouped by treatment option.
+Perform a two sample t test to compare the weights grouped by treatment option.
 
 *** =hint
 Since you are entering the same data in `t.test()` and `boxplot()` you can use exactly the same formula.
@@ -154,6 +178,34 @@ t.test(weight ~ treatment, data = data1)
 ```{r}
 test_function("t.test", args = c("formula", "data"))
 ```
+
+
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:e70c80f493
+## Two sample t test (4)
+
+Repeat the t test you just performed and look at the output.
+
+(t test on `weight` grouped by `treatment` in `data1`)
+
+This time with a threshold of $\alpha = 0.01$ do you reject the null hypothesis?
+
+*** =instructions
+- Yes
+- No
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_1.RData"))
+# boxplot(weight ~ treatment, data = data1)
+```
+
+*** =sct
+```{r}
+test_mc(correct = 2)
+```
 --- type:PlainMultipleChoiceExercise lang:r xp:50 skills:1 key:71a0c28d63
 ## One sample t test (3)
 
@@ -176,21 +228,4 @@ Note: more than one of these statments is correct so choose the one you think mo
 ```{r}
 
 ```
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:738142e742
-## One sample t test (3)
 
-
-
-*** =instructions
-
-*** =hint
-
-*** =pre_exercise_code
-```{r}
-
-```
-
-*** =sct
-```{r}
-
-```
