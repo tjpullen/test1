@@ -206,6 +206,8 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/dat
 ```{r}
 test_mc(correct = 2)
 ```
+
+
 --- type:PlainMultipleChoiceExercise lang:r xp:50 skills:1 key:71a0c28d63
 ## One sample t test (3)
 
