@@ -5,4 +5,5 @@ university: DataCamp
 difficulty_level: 2
 time_needed: 1 hour
 datasets:
+  STAT5_2.RData: Stat5 2
   STAT5_1.RData: Stat5 1
