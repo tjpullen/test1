@@ -212,15 +212,15 @@ test_mc(correct = 2)
 --- type:NormalExercise lang:r xp:100 skills:1 key:028ac3286c
 ## Paired t test
 
-You have a dataframe `data2` from an siRNA knockdown experiment. In this experiment, 6 replicates were performed on different days. In each case a cell line was transfected with either an siRNA targetting a gene of interest or control siRNA. The expression level of geneA was measured and is in the `output` column.
+You have a dataframe `data2` from an siRNA knockdown experiment. In this experiment, a cell line was transfected with either an siRNA targetting a gene of interest (gene A) or control siRNA. The expression level of gene B was measured and is in the `output` column. 6 replicates were performed on different days. Take a look at the data to see if knocking down gene A has an effect on the expression level of gene B.
 
 *** =instructions
-
+Plot a boxplot for the `output` column grouped by `day` for the data in `data2`.
 *** =hint
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData"))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData")
 ```
 
 *** =sample_code
@@ -238,6 +238,124 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/dat
 
 ```
 
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:4fb9825166
+## Paired t test (2)
+
+Take a look at the boxplot you just plotted.
+
+Does it look like the siRNA has an effect on expression of gene B?
+
+*** =instructions
+- Yes, a large effect
+- Yes, a small but clear effect
+- No, no clear effect
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData")
+```
+
+*** =sct
+```{r}
+test_mc(correct = 2)
+```
+--- type:NormalExercise lang:r xp:100 skills:1 key:77c5375f09
+## Paired t test (3)
+
+The trouble with boxplots is that they don't show the individual data points. By looking at the raw data, you may see a pattern that isn't apparent from summary statistics.
+
+You can use the `plot()` function to plot individual data points. However, if the grouping variable is a factor, it will default to plotting a box plot. If you tell it to treat `treatment` as a numeric variable using `as.numeric(treatment)`, it will plot a scatter plot.
+
+*** =instructions
+Plot a scatter plot of `output` grouped by `treatment` from `data2`
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData")
+```
+
+*** =solution
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:e814c7095b
+## Paired t test (4)
+
+That's great, but what we really want to see was whether there are big differences between the replicates performed on different days.
+
+To see this, we can colour the points by day. To do this, you just add the `col =` argument (short for colour). You want it to colour the points according to the `day` column.
+
+*** =instructions
+Plot a scatter plot of `output` grouped by `treatment` from `data2` with the data points coloured according to `day`
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData")
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
+
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:1dd88f988a
+## Paired t test (4)
+
+** Content not found **
+
+
+*** =instructions
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
 --- type:VideoExercise lang:r xp:50 skills:1 key:7bc75b2e79
 ## How does the t test work?
 
@@ -246,17 +364,14 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/dat
 //player.vimeo.com/video/154783078
 
 
---- type:PlainMultipleChoiceExercise lang:r xp:50 skills:1 key:71a0c28d63
-## One sample t test (3)
 
-With the output `p = 0.04885`, which statement best describes the outcome of this test?
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:1a4c22d00a
+## Assumptions of the t test (1)
 
-Note: more than one of these statments is correct so choose the one you think most accurately represents the result.
+** Content not found **
+
 *** =instructions
-- This cohort is significantly taller than the WHO reference data
-- This result would be unusual if
-- There is a 95% probability that this cohort is taller than the reference data
-- 
+
 *** =hint
 
 *** =pre_exercise_code
@@ -269,3 +384,210 @@ Note: more than one of these statments is correct so choose the one you think mo
 
 ```
 
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:cd73744d94
+## Assumptions of the t test (2)
+
+** Content not found **
+
+
+*** =instructions
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:e1591a53fc
+## Assumptions of the t test (3)
+
+** Content not found **
+
+*** =instructions
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
+
+
+--- type:VideoExercise lang:r xp:50 skills:1 key:ceda018afc
+## Statistical power
+
+
+*** =video_link
+//player.vimeo.com/video/154783078
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:c166f5d1c6
+## Statistical power (2)
+
+** Content not found **
+
+
+*** =instructions
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:731ff43525
+## Statistical power (3)
+
+** Content not found **
+
+
+*** =instructions
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
+
+--- type:VideoExercise lang:r xp:50 skills:1 key:ddbb4c08fe
+## The problem with multiple testing
+
+
+*** =video_link
+//player.vimeo.com/video/154783078
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:bd50d77fba
+## Multiple testing (2)
+
+
+*** =instructions
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:5d5572f407
+## Multiple testing 2
+
+** Content not found **
+
+
+*** =instructions
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:10f7d807d3
+## Multiple testing (3)
+
+** Content not found **
+
+
+*** =instructions
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
