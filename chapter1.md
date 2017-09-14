@@ -141,7 +141,7 @@ test_mc(correct = 1)
 --- type:NormalExercise lang:r xp:100 skills:1 key:1bb567adc1
 ## Two sample t test (3)
 
-Now you've had a look at the data, you could do a formal hypothesis test.
+Since it looks like there's an effect, let's do a formal hypothesis test to quantify this.
 
 *** =instructions
 Perform a two sample t test to compare the weights grouped by treatment option.
@@ -206,6 +206,44 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/dat
 ```{r}
 test_mc(correct = 2)
 ```
+
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:028ac3286c
+## Paired t test
+
+You have a dataframe `data2` from an siRNA knockdown experiment. In this experiment, 6 replicates were performed on different days. In each case a cell line was transfected with either an siRNA targetting a gene of interest or control siRNA. The expression level of geneA was measured and is in the `output` column.
+
+*** =instructions
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData"))
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
+
+--- type:VideoExercise lang:r xp:50 skills:1 key:7bc75b2e79
+## How does the t test work?
+
+
+*** =video_link
+//player.vimeo.com/video/154783078
 
 
 --- type:PlainMultipleChoiceExercise lang:r xp:50 skills:1 key:71a0c28d63
