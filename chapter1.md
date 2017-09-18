@@ -210,9 +210,11 @@ test_mc(correct = 2)
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:028ac3286c
-## Paired t test
+## Dealing with variation between replicates
 
-You have a dataframe `data2` from an siRNA knockdown experiment. In this experiment, a cell line was transfected with either an siRNA targetting a gene of interest (gene A) or control siRNA. The expression level of gene B was measured and is in the `output` column. 6 replicates were performed on different days. Take a look at the data to see if knocking down gene A has an effect on the expression level of gene B.
+Statistics can be used to distinguish an effect which is masked by random variation - in other words, to detect a signal over the background noise.
+
+The dataframe `data2`, contains the results of an siRNA knockdown experiment. In this experiment, a cell line was transfected with either an siRNA targetting a gene of interest (gene A) or control siRNA. The expression level of gene B was measured and is in the `output` column. 6 replicates were performed on different days. Take a look at the data to see if knocking down gene A has an effect on the expression level of gene B.
 
 *** =instructions
 Plot a boxplot for the `output` column grouped by `day` for the data in `data2`.
@@ -220,22 +222,26 @@ Plot a boxplot for the `output` column grouped by `day` for the data in `data2`.
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData")
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData"))
 ```
 
 *** =sample_code
 ```{r}
+# Boxplot of output grouped by day
+
 
 ```
 
 *** =solution
 ```{r}
+# Boxplot of output grouped by day
+boxplot(output ~ day, data = data2)
 
 ```
 
 *** =sct
 ```{r}
-
+test_function("boxplot", args = c("formula", "data"))
 ```
 
 
