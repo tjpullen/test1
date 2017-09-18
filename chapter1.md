@@ -280,6 +280,8 @@ It looks like there may be an effect, but the effect is small relative to the di
 Perform a two sample t test to determine the likelihood of observing a result like this if there were no effect.
 *** =instructions
 Perform a two sample t test on `output` grouped by `treatment` from `data2`.
+
+Look at the output, and note down the *p value*.
 *** =hint
 
 *** =pre_exercise_code
@@ -305,52 +307,48 @@ t.test(output ~ treatment, data = data2)
 test_function("t.test", args = c("formula", "data"))
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:aadafbc222
-## <<<New Exercise>>>
 
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:acf3acd269
+## Dealing with variation between replicates (4)
 
+With $\alpha = 0.05$ do you reject the null hypothesis?
 *** =instructions
-
+- Yes
+- No
 *** =hint
 
 *** =pre_exercise_code
-```{r}
-
-```
-
-*** =sample_code
-```{r}
-
-```
-
-*** =solution
 ```{r}
 
 ```
 
 *** =sct
 ```{r}
-
+test_mc(correct = 2)
 ```
+
 --- type:NormalExercise lang:r xp:100 skills:1 key:77c5375f09
-## Paired t test (3)
+## Looking at the data more carefully
+
+You failed to reject the null hypothsis, but let's take a closer look at the data.
 
 The trouble with boxplots is that they don't show the individual data points. By looking at the raw data, you may see a pattern that isn't apparent from summary statistics.
 
-You can use the `plot()` function to plot individual data points. However, if the grouping variable is a factor, it will default to plotting a box plot. If you tell it to treat `treatment` as a numeric variable using `as.numeric(treatment)`, it will plot a scatter plot.
+You can use the `plot()` function to plot individual data points grouped by `day` to see how much variation there was between replicates. However, if the grouping variable is a factor, it will default to plotting a box plot. If you tell it to treat `day` as a numeric variable using `as.numeric(day)`, it will plot a scatter plot.
 
 *** =instructions
-Plot a scatter plot of `output` grouped by `treatment` from `data2`
+Plot a scatter plot of `output` grouped by `day` from `data2`
 *** =hint
 
 *** =pre_exercise_code
 ```{r}
-
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData"))
 ```
 
 *** =sample_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData")
+# Scatter plot of output grouped by day
+
 ```
 
 *** =solution
