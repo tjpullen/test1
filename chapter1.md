@@ -217,7 +217,7 @@ Statistics can be used to distinguish an effect which is masked by random variat
 The dataframe `data2`, contains the results of an siRNA knockdown experiment. In this experiment, a cell line was transfected with either an siRNA targetting a gene of interest (gene A) or control siRNA. The expression level of gene B was measured and is in the `output` column. 6 replicates were performed on different days. Take a look at the data to see if knocking down gene A has an effect on the expression level of gene B.
 
 *** =instructions
-Plot a boxplot for the `output` column grouped by `day` for the data in `data2`.
+Plot a boxplot for the `output` column grouped by `treatment` for the data in `data2`.
 *** =hint
 
 *** =pre_exercise_code
@@ -227,15 +227,14 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/dat
 
 *** =sample_code
 ```{r}
-# Boxplot of output grouped by day
-
+# Boxplot of output grouped by treatment
 
 ```
 
 *** =solution
 ```{r}
 # Boxplot of output grouped by day
-boxplot(output ~ day, data = data2)
+boxplot(output ~ treatment, data = data2)
 
 ```
 
@@ -247,7 +246,7 @@ test_function("boxplot", args = c("formula", "data"))
 
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:4fb9825166
-## Paired t test (2)
+## Dealing with variation between replicates (2)
 
 Take a look at the boxplot you just plotted.
 
@@ -256,17 +255,82 @@ Does it look like the siRNA has an effect on expression of gene B?
 *** =instructions
 - Yes, a large effect
 - Yes, a small but clear effect
+- Possibly, a small effect
 - No, no clear effect
 *** =hint
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData")
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData"))
+boxplot(output ~ treatment, data = data2)
 ```
 
 *** =sct
 ```{r}
-test_mc(correct = 2)
+test_mc(correct = 3)
+```
+
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:c1998ab6d2
+## Dealing with variation between replicates (3)
+
+It looks like there may be a small effect, but the effect is small relative to the dispersion of the data.
+
+Perform a two sample t test to determine the likelihood of observing a result like this if there were no effect.
+*** =instructions
+Perform a two sample t test on `output` grouped by `treatment` from `data2`.
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData"))
+```
+
+*** =sample_code
+```{r}
+# t test on output grouped by treatment
+
+```
+
+*** =solution
+```{r}
+# t test on output grouped by treatment
+t.test(output ~ yreatment, data = data2)
+
+```
+
+*** =sct
+```{r}
+
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:aadafbc222
+## <<<New Exercise>>>
+
+
+*** =instructions
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+
+```
+
+*** =sct
+```{r}
+
 ```
 --- type:NormalExercise lang:r xp:100 skills:1 key:77c5375f09
 ## Paired t test (3)
