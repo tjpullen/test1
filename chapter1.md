@@ -275,7 +275,7 @@ test_mc(correct = 3)
 --- type:NormalExercise lang:r xp:100 skills:1 key:c1998ab6d2
 ## Dealing with variation between replicates (3)
 
-It looks like there may be a small effect, but the effect is small relative to the dispersion of the data.
+It looks like there may be an effect, but the effect is small relative to the dispersion of the data.
 
 Perform a two sample t test to determine the likelihood of observing a result like this if there were no effect.
 *** =instructions
@@ -296,13 +296,13 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/dat
 *** =solution
 ```{r}
 # t test on output grouped by treatment
-t.test(output ~ yreatment, data = data2)
+t.test(output ~ treatment, data = data2)
 
 ```
 
 *** =sct
 ```{r}
-
+test_function("t.test", args = c("formula", "data"))
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:aadafbc222
