@@ -328,13 +328,13 @@ test_mc(correct = 2)
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:77c5375f09
-## Looking at the data more carefully
+## Looking at the data more closely
 
 You failed to reject the null hypothsis, but let's take a closer look at the data.
 
 The trouble with boxplots is that they don't show the individual data points. By looking at the raw data, you may see a pattern that isn't apparent from summary statistics.
 
-You can use the `plot()` function to plot individual data points grouped by `day` to see how much variation there was between replicates. However, if the grouping variable is a factor, it will default to plotting a box plot. If you tell it to treat `day` as a numeric variable using `as.numeric(day)`, it will plot a scatter plot.
+You can use the `plot()` function to plot individual data points grouped by `day` to see how much variation there was between replicates. However, if the grouping variable is a factor, R will produce a box plot. If you tell it to treat `day` as a numeric variable using `as.numeric(day)`, it will plot a scatter plot.
 
 *** =instructions
 Plot a scatter plot of `output` grouped by `day` from `data2`
@@ -353,21 +353,57 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/dat
 
 *** =solution
 ```{r}
+# Scatter plot of output grouped by day
+plot(output ~ as.numeric(day), data = data2)
+```
+
+*** =sct
+```{r}
+test_function("plot", args = c("formula", "data"))
+```
+
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:660cefb3bd
+## Looking at the dat (even) more closely
+
+That's great, but it would be helpful to know which datapoint refers to which treatment.
+
+You can easily do this by colouring the data points with the `col =` argument.
+
+
+*** =instructions
+Add in the `col = ` argument to colour the datapoints by `treatment`.
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData"))
+```
+
+*** =sample_code
+```{r}
+# Scatter plot of output grouped by day and coloured by treatment
+plot(output ~ as.numeric(day), data = data2)
+```
+
+*** =solution
+```{r}
+# Scatter plot of output grouped by day and coloured by treatment
+plot(output ~ as.numeric(day), data = data2, col = treatment)
 
 ```
 
 *** =sct
 ```{r}
-
+test_function('plot', args = c('formula', 'data', 'col'))
 ```
-
-
 --- type:NormalExercise lang:r xp:100 skills:1 key:e814c7095b
 ## Paired t test (4)
 
-That's great, but what we really want to see was whether there are big differences between the replicates performed on different days.
+That's great, but you really want to see whether there are big differences between the replicates performed on different days.
 
-To see this, we can colour the points by day. To do this, you just add the `col =` argument (short for colour). You want it to colour the points according to the `day` column.
+To see this, you can colour the points by day. To do this, you just add the `col =` argument (short for colour). You want it to colour the points according to the `day` column.
 
 *** =instructions
 Plot a scatter plot of `output` grouped by `treatment` from `data2` with the data points coloured according to `day`
