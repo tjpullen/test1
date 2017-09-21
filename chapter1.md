@@ -404,11 +404,12 @@ test_function('plot', args = c('formula', 'data', 'col'))
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:dee54eda39
 ## Dealing with variation between replicates (5)
 
+Look at the scatter plot and interpret what the data shows.
 
-
+Note: Black = control and Red = siRNA
 
 *** =instructions
-
+- 
 *** =hint
 
 *** =pre_exercise_code
