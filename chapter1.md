@@ -365,7 +365,7 @@ test_function("plot", args = c("formula", "data"))
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:660cefb3bd
-## Looking at the dat (even) more closely
+## Looking at the data (even) more closely
 
 That's great, but it would be helpful to know which datapoint refers to which treatment.
 
@@ -397,6 +397,30 @@ plot(output ~ as.numeric(day), data = data2, col = treatment)
 *** =sct
 ```{r}
 test_function('plot', args = c('formula', 'data', 'col'))
+```
+
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:dee54eda39
+## Dealing with variation between replicates (5)
+
+
+
+
+*** =instructions
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData"))
+# Scatter plot of output grouped by day and coloured by treatment
+plot(output ~ as.numeric(day), data = data2, col = treatment)
+```
+
+*** =sct
+```{r}
+
 ```
 --- type:NormalExercise lang:r xp:100 skills:1 key:e814c7095b
 ## Paired t test (4)
