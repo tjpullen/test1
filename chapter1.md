@@ -422,43 +422,12 @@ plot(output ~ as.numeric(day), data = data2, col = treatment)
 ```{r}
 
 ```
---- type:NormalExercise lang:r xp:100 skills:1 key:e814c7095b
-## Paired t test (4)
-
-That's great, but you really want to see whether there are big differences between the replicates performed on different days.
-
-To see this, you can colour the points by day. To do this, you just add the `col =` argument (short for colour). You want it to colour the points according to the `day` column.
-
-*** =instructions
-Plot a scatter plot of `output` grouped by `treatment` from `data2` with the data points coloured according to `day`
-*** =hint
-
-*** =pre_exercise_code
-```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/datasets/STAT5_2.RData")
-```
-
-*** =sample_code
-```{r}
-
-```
-
-*** =solution
-```{r}
-
-```
-
-*** =sct
-```{r}
-
-```
-
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:1dd88f988a
 ## Paired t test (4)
 
-** Content not found **
+
 
 
 *** =instructions
@@ -496,7 +465,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/dat
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:1a4c22d00a
 ## Assumptions of the t test (1)
 
-** Content not found **
+
 
 *** =instructions
 
@@ -516,7 +485,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/dat
 --- type:NormalExercise lang:r xp:100 skills:1 key:cd73744d94
 ## Assumptions of the t test (2)
 
-** Content not found **
+
 
 
 *** =instructions
@@ -546,7 +515,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/dat
 --- type:NormalExercise lang:r xp:100 skills:1 key:e1591a53fc
 ## Assumptions of the t test (3)
 
-** Content not found **
+
 
 *** =instructions
 
@@ -584,7 +553,6 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/dat
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:c166f5d1c6
 ## Statistical power (2)
 
-** Content not found **
 
 
 *** =instructions
@@ -662,7 +630,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/dat
 --- type:NormalExercise lang:r xp:100 skills:1 key:5d5572f407
 ## Multiple testing 2
 
-** Content not found **
+
 
 
 *** =instructions
@@ -693,7 +661,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_5357/dat
 --- type:NormalExercise lang:r xp:100 skills:1 key:10f7d807d3
 ## Multiple testing (3)
 
-** Content not found **
+
 
 
 *** =instructions
